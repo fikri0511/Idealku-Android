@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="androidx.core.content.ContextCompat" />
+        <variable
+            name="tvHasilViewModel"
+            type="org.d3if1071.idealku.viewmodel.MainViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.MainFragment">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="221dp"
+                android:background="@drawable/header"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_judul"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/cek_berat_badan_ideal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textColor"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_judul">
+
+
+                <RadioButton
+                    android:id="@+id/rb_laki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:drawableTop="@drawable/laki1"
+                    android:gravity="center"
+                    android:text="@string/laki_laki" />
+
+                <RadioButton
+                    android:id="@+id/rb_perempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/perempuan1"
+                    android:gravity="center"
+                    android:text="@string/perempuan" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_berat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:hint="@string/masukan_berat_badan"
+                android:textColorHint="#A3A3A3"
+                app:boxStrokeColor="#14E3E0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/textColor"
+                    android:drawableStart="@drawable/logo_berat"
+                    android:drawablePadding="16dp"
+                    android:inputType="numberDecimal"
+                    android:shadowColor="#4B9B9E"
+                    android:textColor="#02423C"
+                    android:textColorHint="@color/textColorHint"
+                    app:endIconMode="clear_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_tinggi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="@string/masukan_tinggi_badan"
+                android:textColorHint="#A3A3A3"
+                app:boxStrokeColor="#14E3E0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tf_berat">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_tinggi"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/textColor"
+                    android:drawableStart="@drawable/logo_tinggi"
+                    android:drawablePadding="16dp"
+                    android:inputType="numberDecimal"
+                    android:shadowColor="#4B9B9E"
+                    android:textColor="#02423C"
+                    android:textColorHint="@color/textColorHint"
+                    app:endIconMode="clear_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_umur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="@string/masukan_tinggi_badan"
+                android:textColorHint="#A3A3A3"
+                app:boxStrokeColor="#14E3E0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tf_tinggi"/>
+
+            <Button
+                android:id="@+id/bt_hitung"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/hitung_berat_badan"
+                android:textColorHighlight="@color/textColor"
+                android:textColorLink="@color/textColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.226"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tf_umur" />
+
+            <TextView
+                android:id="@+id/tv_judulBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Hasil Berat Badan"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_hitung" />
+
+
+            <TextView
+                android:id="@+id/tv_judulBBIdeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Berat Badan Ideal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_judulBMI" />
+
+
+            <TextView
+                android:id="@+id/tv_judulBMIHasil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Hasil BMI"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_judulBBIdeal"
+                app:layout_constraintTop_toBottomOf="@+id/im_BMI" />
+
+            <ImageView
+                android:id="@+id/im_BMI"
+                android:layout_width="65dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.094"
+                app:srcCompat="@drawable/logo_berat"
+                app:layout_constraintStart_toStartOf="@+id/tv_judulBBIdeal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_judulBBIdeal" />
+
+            <TextView
+                android:id="@+id/tv_hasilberatIdeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:visibility="gone"
+                android:text="@{String.valueOf(tvHasilViewModel.hasilIdeal)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/textColor"
+                app:layout_constraintBottom_toBottomOf="@+id/im_BMI"
+                app:layout_constraintStart_toEndOf="@+id/im_BMI"
+                app:layout_constraintTop_toTopOf="@+id/im_BMI"
+                app:layout_constraintVertical_bias="0.52" />
+
+            <ImageView
+                android:id="@+id/im_beratIdeal"
+                android:layout_width="65dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                android:src="@{ContextCompat.getDrawable(context,tvHasilViewModel.im_BMI)}"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.094"
+                app:layout_constraintStart_toStartOf="@+id/tv_judulBMIHasil"
+                app:layout_constraintTop_toBottomOf="@+id/tv_judulBMIHasil"
+                />
+
+            <TextView
+                android:id="@+id/tv_hasilBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:visibility="gone"
+                android:text="@{String.valueOf(tvHasilViewModel.hasilBMI)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/textColor"
+                app:layout_constraintBottom_toBottomOf="@+id/im_beratIdeal"
+                app:layout_constraintStart_toEndOf="@+id/im_BMI"
+                app:layout_constraintTop_toTopOf="@+id/im_beratIdeal"
+                app:layout_constraintVertical_bias="0.52" />
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/foot" />
+
+            <Button
+                android:id="@+id/b_reset"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="88dp"
+                android:layout_marginBottom="32dp"
+                android:text="Reset"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_hitung"
+                app:layout_constraintStart_toEndOf="@+id/bt_hitung"
+                app:layout_constraintTop_toTopOf="@+id/bt_hitung"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/b_simpanData"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="Simpan"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/im_beratIdeal"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
