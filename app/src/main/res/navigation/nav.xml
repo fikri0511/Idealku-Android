@@ -9,5 +9,21 @@
         android:id="@+id/mainFragment2"
         android:name="org.d3if1071.idealku.view.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment2_to_dataBeratBadan"
+            app:destination="@id/dataBeratBadan" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataBeratBadan"
+        android:name="org.d3if1071.idealku.view.DataListBeratBadan"
+        android:label="DataBeratBadan" >
+        <action
+            android:id="@+id/action_dataBeratBadan_to_editDataFragment"
+            app:destination="@id/editDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDataFragment"
+        android:name="org.d3if1071.idealku.view.EditDataFragment"
+        android:label="EditDataFragment" />
 </navigation>

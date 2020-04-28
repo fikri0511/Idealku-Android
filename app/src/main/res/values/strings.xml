@@ -10,4 +10,18 @@
     <string name="masukan_tinggi_badan">Masukan Tinggi Badan</string>
     <string name="hitung_berat_badan">Hitung</string>
     <string name="hasil_gemuk">Hasil : Gemuk</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="edit_data_berat_badan">Edit Data Berat Badan</string>
+    <string name="edit_data">Edit Data</string>
+    <string name="hapus_data">Hapus Data</string>
+    <string name="berat_badan_ideal">Berat Badan Ideal</string>
+    <string name="hasil_bmi">Hasil BMI</string>
+    <string name="tes">tes</string>
+    <string name="hasil_berat_badan">Hasil Berat Badan</string>
+    <string name="gambar">Gambar</string>
+    <string name="reset">Reset</string>
+    <string name="simpan">Simpan</string>
+    <string name="tinggi">Tinggi</string>
+    <string name="berat">Berat</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
 </resources>

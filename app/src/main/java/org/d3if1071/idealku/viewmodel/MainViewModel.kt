@@ -1,13 +1,18 @@
 package org.d3if1071.idealku.viewmodel
 
+import android.app.Application
 import android.media.Image
 import android.view.View
 import android.widget.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.*
 import org.d3if1071.idealku.R
+import org.d3if1071.idealku.data.DataBeratBadan
+import org.d3if1071.idealku.data.DataBeratBadanDao
 import kotlin.math.pow
+import kotlin.math.tan
 
 class MainViewModel : ViewModel(){
     private val _im_BMI=MutableLiveData<Int>()
@@ -82,6 +87,7 @@ class MainViewModel : ViewModel(){
         bSimpanData.visibility= View.GONE
 
     }
+
 
 
 }

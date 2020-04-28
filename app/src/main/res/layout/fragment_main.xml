@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context=".view.MainFragment">
 
             <LinearLayout
@@ -152,12 +152,12 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="28dp"
                 android:text="@string/hitung_berat_badan"
                 android:textColorHighlight="@color/textColor"
                 android:textColorLink="@color/textColor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.226"
+                app:layout_constraintHorizontal_bias="0.308"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tf_umur" />
 
@@ -166,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Hasil Berat Badan"
+                android:text="@string/hasil_berat_badan"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/textColor"
                 android:textStyle="bold"
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Berat Badan Ideal"
+                android:text="@string/berat_badan_ideal"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/textColor"
                 android:textStyle="bold"
@@ -197,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Hasil BMI"
+                android:text="@string/hasil_bmi"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/textColor"
                 android:textStyle="bold"
@@ -217,7 +217,8 @@
                 app:layout_constraintHorizontal_bias="0.094"
                 app:srcCompat="@drawable/logo_berat"
                 app:layout_constraintStart_toStartOf="@+id/tv_judulBBIdeal"
-                app:layout_constraintTop_toBottomOf="@+id/tv_judulBBIdeal" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_judulBBIdeal"
+                android:contentDescription="@string/gambar" />
 
             <TextView
                 android:id="@+id/tv_hasilberatIdeal"
@@ -245,7 +246,7 @@
                 app:layout_constraintHorizontal_bias="0.094"
                 app:layout_constraintStart_toStartOf="@+id/tv_judulBMIHasil"
                 app:layout_constraintTop_toBottomOf="@+id/tv_judulBMIHasil"
-                />
+                android:contentDescription="@string/gambar" />
 
             <TextView
                 android:id="@+id/tv_hasilBMI"
@@ -269,7 +270,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/foot" />
+                app:srcCompat="@drawable/foot"
+                android:contentDescription="@string/gambar" />
 
             <Button
                 android:id="@+id/b_reset"
@@ -278,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="88dp"
                 android:layout_marginBottom="32dp"
-                android:text="Reset"
+                android:text="@string/reset"
                 app:layout_constraintBottom_toBottomOf="@+id/bt_hitung"
                 app:layout_constraintStart_toEndOf="@+id/bt_hitung"
                 app:layout_constraintTop_toTopOf="@+id/bt_hitung"
@@ -291,7 +293,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="24dp"
-                android:text="Simpan"
+                android:text="@string/simpan"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/imageView2"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -24,7 +24,7 @@ android {
         }
     }
 
-    dataBinding{
+    dataBinding {
         enabled true
     }
 }
@@ -49,4 +49,18 @@ dependencies {
     //Lifecyle ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
+    //  room db
+    def room_version = "2.2.4"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:2.2.5"
+
+    //  coroutine and lifecycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0"
+
+    //  recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
